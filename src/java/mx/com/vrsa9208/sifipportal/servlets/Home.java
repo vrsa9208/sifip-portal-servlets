@@ -34,9 +34,6 @@ public class Home extends HttpServlet {
         if (action == null) {
             request.getRequestDispatcher(PageDirectory.LAYOUT).forward(request, response);
         }
-        else if(action.equals("mostrarCatalogos")){
-            this.mostrarCatalogos(request, response);
-        }
     }
 
     @Override
@@ -47,12 +44,5 @@ public class Home extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }
-
-    private void mostrarCatalogos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        request.setAttribute("title", "Catálogos");
-        request.setAttribute("menuCatalogos", true);
-        //request.setAttribute("page", PageDirectory.CAMBIAR_PASSWORD_PAGE);
-        request.getRequestDispatcher(PageDirectory.LAYOUT).forward(request, response);
     }
 }

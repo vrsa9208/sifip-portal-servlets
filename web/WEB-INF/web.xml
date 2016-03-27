@@ -20,6 +20,14 @@
         <servlet-name>Usuario</servlet-name>
         <servlet-class>mx.com.vrsa9208.sifipportal.servlets.Usuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Categoria</servlet-name>
+        <servlet-class>mx.com.vrsa9208.sifipportal.servlets.Categoria</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TipoDeCuenta</servlet-name>
+        <servlet-class>mx.com.vrsa9208.sifipportal.servlets.TipoDeCuenta</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>Usuario</servlet-name>
         <url-pattern>/Usuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Categoria</servlet-name>
+        <url-pattern>/Categoria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TipoDeCuenta</servlet-name>
+        <url-pattern>/TipoDeCuenta</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -54,6 +54,11 @@
             <div class="row">
                 <div class="col-lg-2">
                     <ul class="nav nav-pills nav-stacked">
+                        <li 
+                            <c:if test="${not empty requestScope.menuCategorias}">
+                                class="active" 
+                            </c:if>
+                            role="presentation"><a href="<c:url value="Categoria" />">Categorías</a></li>
                         <li
                             <c:if test="${not empty requestScope.menuCuentas}">
                                 class="active" 
@@ -80,10 +85,10 @@
                             </c:if>
                             role="presentation"><a href="#">Presupuestos</a></li>
                         <li 
-                            <c:if test="${not empty requestScope.menuCatalogos}">
+                            <c:if test="${not empty requestScope.menuTiposDeCuenta}">
                                 class="active" 
                             </c:if>
-                            role="presentation"><a href="<c:url value="Home?action=mostrarCatalogos" />">Catálogos</a></li>
+                            role="presentation"><a href="<c:url value="TipoDeCuenta" />">Tipos de Cuenta</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-10">

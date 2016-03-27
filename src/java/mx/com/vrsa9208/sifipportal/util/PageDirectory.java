@@ -16,5 +16,7 @@ public class PageDirectory {
     public static final String MI_PERFIL = "/Views/Perfil/mi_perfil.jsp";
     public static final String CAMBIAR_PASSWORD = "/Views/Perfil/cambiar_password.jsp";
     public static final String REGISTRAR_USUARIO = "/Views/Usuario/registrar_usuario.jsp";
-    public static final String MOSTRAR_CATALOGOS = "/Views/Usuario/registrar_usuario.jsp";
+    public static final String MOSTRAR_CATALOGOS = "/Views/Home/mostrar_catalogos.jsp";
+    public static final String LISTA_CATEGORIAS = "/Views/Categoria/lista_categorias.jsp";
+    public static final String AGREGAR_EDITAR_CATEGORIA = "/Views/Categoria/add_edit.jsp";
 }
