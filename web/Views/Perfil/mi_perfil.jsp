@@ -3,7 +3,7 @@
 <%@ page import="mx.com.vrsa9208.sifiplibrary.model.Usuario" %>
 <div class="container-fluid">
     <h2 class="text-left">Mi Perfil</h2>
-    <table class="table table-striped table-bordered">
+    <table class="table table-bordered">
         <tbody>
             <tr>
                 <th>Nombre</th>
@@ -38,4 +38,5 @@
             </tr>
         </tbody>
     </table>
+    <a href="<c:url value="Perfil?action=cambiarPassword" />">Cambiar Password</a>
 </div>

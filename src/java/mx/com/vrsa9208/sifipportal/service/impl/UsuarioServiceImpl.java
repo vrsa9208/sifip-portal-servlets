@@ -32,5 +32,10 @@ public class UsuarioServiceImpl implements UsuarioService{
     public Usuario login(String email, String password) {
         return dao.getByEmailAndPassword(email, password);
     }
+
+    @Override
+    public boolean cambiarPassword(String password, int idUsuario) {
+        return dao.updatePassword(idUsuario, password);
+    }
     
 }

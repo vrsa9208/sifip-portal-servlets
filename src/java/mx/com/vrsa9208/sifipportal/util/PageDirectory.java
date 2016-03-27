@@ -14,4 +14,5 @@ public class PageDirectory {
     public static final String LAYOUT_PAGE = "/Views/Templates/layout.jsp";
     public static final String LOGIN_PAGE = "/Views/Login/login.jsp";
     public static final String MI_PERFIL_PAGE = "/Views/Perfil/mi_perfil.jsp";
+    public static final String CAMBIAR_PASSWORD_PAGE = "/Views/Perfil/cambiar_password.jsp";
 }

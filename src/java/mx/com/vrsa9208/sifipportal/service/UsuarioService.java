@@ -14,4 +14,5 @@ import mx.com.vrsa9208.sifiplibrary.model.Usuario;
 public interface UsuarioService {
     
     Usuario login(String email, String password);
+    boolean cambiarPassword(String password, int idUsuario);
 }
