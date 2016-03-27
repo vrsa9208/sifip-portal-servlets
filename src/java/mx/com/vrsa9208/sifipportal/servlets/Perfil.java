@@ -6,6 +6,7 @@
 package mx.com.vrsa9208.sifipportal.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,9 +16,9 @@ import mx.com.vrsa9208.sifipportal.util.PageDirectory;
 
 /**
  *
- * @author Administrador
+ * @author vrsa9208
  */
-public class Home extends HttpServlet {
+public class Perfil extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,17 +30,31 @@ public class Home extends HttpServlet {
             return;
         }
         
-        request.getRequestDispatcher(PageDirectory.LAYOUT_PAGE).forward(request, response);
+        String accion = request.getParameter("action");
+        if(accion == null){
+            this.getPerfil(request, response);
+        }
+        else if(accion == "cambiarPassword"){
+            System.out.println("Cambiando password");
+        }
     }
-
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
     }
 
     @Override
     public String getServletInfo() {
         return "Short description";
+    }
+    
+    private void getPerfil(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        request.setAttribute("title", "Mi perfil");
+        request.setAttribute("menuMiPerfil", true);
+        request.setAttribute("page", PageDirectory.MI_PERFIL_PAGE);
+        request.getRequestDispatcher(PageDirectory.LAYOUT_PAGE).forward(request, response);
     }
 
 }

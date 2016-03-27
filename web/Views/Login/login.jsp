@@ -10,7 +10,6 @@
     </head>
     <body>
         <div class="container">
-            <div style="margin-top: 100px"></div>
             <div class="row">
                 <div class="col-lg-6 col-lg-offset-3">
                     <h1 class="text-center">Sistema de Finanzas Personales</h1>

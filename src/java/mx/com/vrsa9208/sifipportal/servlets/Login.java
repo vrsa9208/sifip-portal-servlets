@@ -14,14 +14,13 @@ import javax.servlet.http.HttpSession;
 import mx.com.vrsa9208.sifiplibrary.model.Usuario;
 import mx.com.vrsa9208.sifipportal.service.UsuarioService;
 import mx.com.vrsa9208.sifipportal.service.impl.UsuarioServiceImpl;
+import mx.com.vrsa9208.sifipportal.util.PageDirectory;
 
 /**
  *
  * @author Administrador
  */
 public class Login extends HttpServlet {
-
-    private final String LOGIN_PAGE = "/Views/Login/login.jsp";
 
     private UsuarioService service;
 
@@ -32,7 +31,7 @@ public class Login extends HttpServlet {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
         
         if(usuario == null){
-            request.getRequestDispatcher(LOGIN_PAGE).forward(request, response);
+            request.getRequestDispatcher(PageDirectory.LOGIN_PAGE).forward(request, response);
         }
         else{
             response.sendRedirect("Home");
@@ -67,7 +66,7 @@ public class Login extends HttpServlet {
             request.setAttribute("mensajeError", mensajeError);
             request.setAttribute("email", email);
             request.setAttribute("password", password);
-            request.getRequestDispatcher(LOGIN_PAGE).forward(request, response);
+            request.getRequestDispatcher(PageDirectory.LOGIN_PAGE).forward(request, response);
         }
     }
 

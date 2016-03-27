@@ -12,6 +12,10 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>mx.com.vrsa9208.sifipportal.servlets.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Perfil</servlet-name>
+        <servlet-class>mx.com.vrsa9208.sifipportal.servlets.Perfil</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Perfil</servlet-name>
+        <url-pattern>/Perfil</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
