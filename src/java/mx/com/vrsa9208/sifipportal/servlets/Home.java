@@ -18,18 +18,25 @@ import mx.com.vrsa9208.sifipportal.util.PageDirectory;
  * @author Administrador
  */
 public class Home extends HttpServlet {
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //Valida la sesión del usuario
         HttpSession session = request.getSession();
-        if(session.getAttribute("usuario") == null){
+        if (session.getAttribute("usuario") == null) {
             response.sendRedirect("Login");
             return;
         }
-        
-        request.getRequestDispatcher(PageDirectory.LAYOUT_PAGE).forward(request, response);
+
+        String action = request.getParameter("action");
+
+        if (action == null) {
+            request.getRequestDispatcher(PageDirectory.LAYOUT).forward(request, response);
+        }
+        else if(action.equals("mostrarCatalogos")){
+            this.mostrarCatalogos(request, response);
+        }
     }
 
     @Override
@@ -42,4 +49,10 @@ public class Home extends HttpServlet {
         return "Short description";
     }
 
+    private void mostrarCatalogos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        request.setAttribute("title", "Catálogos");
+        request.setAttribute("menuCatalogos", true);
+        //request.setAttribute("page", PageDirectory.CAMBIAR_PASSWORD_PAGE);
+        request.getRequestDispatcher(PageDirectory.LAYOUT).forward(request, response);
+    }
 }

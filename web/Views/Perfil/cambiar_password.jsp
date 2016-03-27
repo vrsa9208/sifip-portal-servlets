@@ -21,17 +21,26 @@
             <form method="post">
                 <div class="form-group">
                     <label for="currentPassword">Password Actual</label>
-                    <input type="password" class="form-control" id="currentPassword" name="currentPassword"
-                           value="${requestScope.currentPassword}" placeholder="Password actual">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                        <input type="password" class="form-control" id="currentPassword" name="currentPassword"
+                               value="${requestScope.currentPassword}" placeholder="Password actual">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="newPassword">Password Nuevo</label>
-                    <input type="password" class="form-control" id="newPassword" name="newPassword" 
-                           value="${requestScope.newPassword}" placeholder="Password nuevo">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                        <input type="password" class="form-control" id="newPassword" name="newPassword" 
+                               value="${requestScope.newPassword}" placeholder="Password nuevo">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="newPassword2" name="newPassword2"
-                           value="${requestScope.newPassword2}" placeholder="Repite el password nuevo">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                        <input type="password" class="form-control" id="newPassword2" name="newPassword2"
+                               value="${requestScope.newPassword2}" placeholder="Repite el password nuevo">
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-success">Guardar</button>
             </form>

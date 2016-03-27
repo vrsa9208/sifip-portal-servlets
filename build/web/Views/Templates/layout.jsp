@@ -79,6 +79,11 @@
                                 class="active" 
                             </c:if>
                             role="presentation"><a href="#">Presupuestos</a></li>
+                        <li 
+                            <c:if test="${not empty requestScope.menuCatalogos}">
+                                class="active" 
+                            </c:if>
+                            role="presentation"><a href="<c:url value="Home?action=mostrarCatalogos" />">Catálogos</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-10">

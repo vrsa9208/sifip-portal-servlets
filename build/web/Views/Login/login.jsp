@@ -17,7 +17,7 @@
                 </div>
             </div>
             <!--Panel de Login-->
-            <div style="margin-top: 100px"></div>
+            <div style="margin-top: 50px"></div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-4">
                     <div class="panel panel-primary">
@@ -31,6 +31,13 @@
                                     <div class="alert alert-danger alert-dismissible" role="alert">
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <strong>Error!</strong> <c:out value="${requestScope.mensajeError}" />
+                                    </div>
+                                </c:if>
+                                <c:set var="mensajeSuccess" value="${requestScope.mensajeSuccess}" />
+                                <c:if test="${not empty mensajeSuccess}">
+                                    <div class="alert alert-success alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <c:out value="${requestScope.mensajeSuccess}" />
                                     </div>
                                 </c:if>
                                 <div class="form-group">
@@ -47,8 +54,9 @@
                                         <input type="password" class="form-control" id="password" placeholder="password" name="password" value="<c:out value="${requestScope.password}" />" />
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Ingresar</button>
-                                <a href="#">Olvide mi password</a>
+                                <button type="submit" class="btn btn-primary">Ingresar</button> &nbsp;&nbsp;
+                                <a href="#">Olvidé mi password</a> &nbsp;&nbsp;
+                                <a href="<c:url value="Usuario?action=register" />">Registrarse</a>
                             </form>
                         </div>
                     </div>

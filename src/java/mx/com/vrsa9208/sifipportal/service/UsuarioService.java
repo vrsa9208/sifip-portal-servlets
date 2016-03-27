@@ -5,7 +5,10 @@
  */
 package mx.com.vrsa9208.sifipportal.service;
 
-import mx.com.vrsa9208.sifiplibrary.model.Usuario;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -13,6 +16,8 @@ import mx.com.vrsa9208.sifiplibrary.model.Usuario;
  */
 public interface UsuarioService {
     
-    Usuario login(String email, String password);
-    boolean cambiarPassword(String password, int idUsuario);
+    void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+    void cambiarPassword(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+    void registrarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+    
 }

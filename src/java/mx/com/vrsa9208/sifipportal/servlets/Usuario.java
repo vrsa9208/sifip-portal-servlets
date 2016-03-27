@@ -6,53 +6,61 @@
 package mx.com.vrsa9208.sifipportal.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import mx.com.vrsa9208.sifiplibrary.model.Usuario;
 import mx.com.vrsa9208.sifipportal.service.UsuarioService;
 import mx.com.vrsa9208.sifipportal.service.impl.UsuarioServiceImpl;
 import mx.com.vrsa9208.sifipportal.util.PageDirectory;
 
 /**
  *
- * @author Administrador
+ * @author vrsa9208
  */
-public class Login extends HttpServlet {
-
+public class Usuario extends HttpServlet {
+    
     private UsuarioService service;
     
-    public Login(){
+    public Usuario(){
         super();
-        this.service = UsuarioServiceImpl.getInstance();
+        service = UsuarioServiceImpl.getInstance();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        String action = request.getParameter("action");
         
-        if(usuario == null){
-            request.getRequestDispatcher(PageDirectory.LOGIN).forward(request, response);
+        if(action == null){
+            response.sendRedirect("Login");
         }
-        else{
-            response.sendRedirect("Home");
+        else if(action.equals("register")){
+            this.registrarUsuario(request, response);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String action = request.getParameter("action");
         
-        service.login(request, response);
+        if(action == null){
+            response.sendRedirect("Login");
+        }
+        else if(action.equals("register")){
+            this.service.registrarUsuario(request, response);
+        }
     }
 
     @Override
     public String getServletInfo() {
-        return "Servlet para controlar el login en el sistema";
-    }// </editor-fold>
+        return "Short description";
+    }
+    
+    private void registrarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        request.getRequestDispatcher(PageDirectory.REGISTRAR_USUARIO).forward(request, response);
+    }
 
 }
