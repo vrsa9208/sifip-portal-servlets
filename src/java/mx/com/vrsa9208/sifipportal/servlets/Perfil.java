@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import mx.com.vrsa9208.sifipportal.service.PerfilService;
 import mx.com.vrsa9208.sifipportal.service.UsuarioService;
+import mx.com.vrsa9208.sifipportal.service.impl.PerfilServiceImpl;
 import mx.com.vrsa9208.sifipportal.service.impl.UsuarioServiceImpl;
 import mx.com.vrsa9208.sifipportal.util.PageDirectory;
 
@@ -71,9 +73,15 @@ public class Perfil extends HttpServlet {
     }
 
     private void getPerfil(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PerfilService perfilService = PerfilServiceImpl.getInstance();
+        HttpSession session = request.getSession();
+        mx.com.vrsa9208.sifiplibrary.model.Usuario usuarioLogeado = (mx.com.vrsa9208.sifiplibrary.model.Usuario) session.getAttribute("usuario");
+        int idUsuarioLogeado = usuarioLogeado.getId_perfil();
+        
         request.setAttribute("title", "Mi perfil");
         request.setAttribute("menuMiPerfil", true);
         request.setAttribute("page", PageDirectory.MI_PERFIL);
+        request.setAttribute("perfilTexto", perfilService.getById(idUsuarioLogeado).getDescripcion());
         request.getRequestDispatcher(PageDirectory.LAYOUT).forward(request, response);
     }
 

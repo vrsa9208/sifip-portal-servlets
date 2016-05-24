@@ -36,6 +36,12 @@
                     <input type="checkbox" checked="<c:out value="${sessionScope.usuario.activo}" />" disabled>
                 </td>
             </tr>
+            <tr>
+                <th>Perfil</th>
+                <td>
+                    <c:out value="${requestScope.perfilTexto}" />
+                </td>
+            </tr>
         </tbody>
     </table>
     <a href="<c:url value="Perfil?action=cambiarPassword" />">Cambiar Password</a>

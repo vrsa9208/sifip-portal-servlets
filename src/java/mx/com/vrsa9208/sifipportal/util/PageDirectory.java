@@ -12,6 +12,7 @@ package mx.com.vrsa9208.sifipportal.util;
 public class PageDirectory {
     
     public static final String LAYOUT = "/Views/Templates/layout.jsp";
+    public static final String SIN_PERMISOS = "/Views/Templates/sinPermisos.jsp";
     public static final String LOGIN = "/Views/Login/login.jsp";
     public static final String MI_PERFIL = "/Views/Perfil/mi_perfil.jsp";
     public static final String CAMBIAR_PASSWORD = "/Views/Perfil/cambiar_password.jsp";

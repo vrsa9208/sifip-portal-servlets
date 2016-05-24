@@ -38,6 +38,16 @@ public class Categoria extends HttpServlet {
             return;
         }
         
+        mx.com.vrsa9208.sifiplibrary.model.Usuario usuarioLogeado = (mx.com.vrsa9208.sifiplibrary.model.Usuario) session.getAttribute("usuario");
+        if(usuarioLogeado.getId_perfil() != 1){
+            //1 => id de perfil tipo administrador
+            request.setAttribute("title", "Sin permisos");
+            request.setAttribute("menuCategorias", true);
+            request.setAttribute("page", PageDirectory.SIN_PERMISOS);
+            request.getRequestDispatcher(PageDirectory.LAYOUT).forward(request, response);
+            return;
+        }
+        
         String action = request.getParameter("action");
 
         if (action == null) {
@@ -61,6 +71,16 @@ public class Categoria extends HttpServlet {
         HttpSession session = request.getSession();
         if (session.getAttribute("usuario") == null) {
             response.sendRedirect("Login");
+            return;
+        }
+        
+        mx.com.vrsa9208.sifiplibrary.model.Usuario usuarioLogeado = (mx.com.vrsa9208.sifiplibrary.model.Usuario) session.getAttribute("usuario");
+        if(usuarioLogeado.getId_perfil() != 1){
+            //1 => id de perfil tipo administrador
+            request.setAttribute("title", "Sin permisos");
+            request.setAttribute("menuCategorias", true);
+            request.setAttribute("page", PageDirectory.SIN_PERMISOS);
+            request.getRequestDispatcher(PageDirectory.LAYOUT).forward(request, response);
             return;
         }
         

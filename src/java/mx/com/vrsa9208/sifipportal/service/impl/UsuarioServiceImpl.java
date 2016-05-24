@@ -115,6 +115,7 @@ public class UsuarioServiceImpl implements UsuarioService{
             usuario.setSegundoApellido(request.getParameter("segundoApellido"));
             usuario.setEmail(request.getParameter("email"));
             usuario.setPassword(request.getParameter("password"));
+            usuario.setId_perfil(2); //2 = Perfil Usuario
             
             if(dao.add(usuario) == null){
                 mensajeError = "No se ha podido registrar el usuario";
