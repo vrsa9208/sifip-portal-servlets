@@ -20,4 +20,7 @@ public class PageDirectory {
     public static final String MOSTRAR_CATALOGOS = "/Views/Home/mostrar_catalogos.jsp";
     public static final String LISTA_CATEGORIAS = "/Views/Categoria/lista_categorias.jsp";
     public static final String AGREGAR_EDITAR_CATEGORIA = "/Views/Categoria/add_edit.jsp";
+    
+    public static final String LISTA_TIPO_CUENTA = "/Views/TipoCuenta/lista_categorias.jsp";
+    public static final String AGREGAR_EDITAR_TIPO_CUENTA = "/Views/TipoCuenta/add_edit.jsp";
 }
