@@ -83,7 +83,7 @@
                             <c:if test="${not empty requestScope.menuPresupuestos}">
                                 class="active" 
                             </c:if>
-                            role="presentation"><a href="#">Presupuestos</a></li>
+                            role="presentation"><a href="<c:url value="Presupuesto" />">Presupuestos</a></li>
                         <li 
                             <c:if test="${not empty requestScope.menuTiposDeCuenta}">
                                 class="active" 
@@ -92,6 +92,12 @@
                     </ul>
                 </div>
                 <div class="col-lg-10">
+                    <c:if test="${not empty requestScope.error}">
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Error !</strong> <c:out value="${requestScope.error}" />
+                        </div>
+                    </c:if>
                     <c:if test="${not empty requestScope.page}">
                         <jsp:include page="${requestScope.page}" />
                     </c:if>
